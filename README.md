@@ -129,6 +129,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 1. Get All Users
 - **Endpoint:** `GET /api/users`
 - **Description:** Retrieve a list of all registered users.
+- **Headers:** `Authorization: Bearer <token>`
 - **Response (200 OK):**
 ```json
 [
@@ -146,6 +147,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 2. Update User Role
 - **Endpoint:** `PUT /api/users/:id/role`
 - **Description:** Update a specific user's role.
+- **Headers:** `Authorization: Bearer <token>`
 - **Request Body:**
 ```json
 {
@@ -164,6 +166,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 3. Update User Status
 - **Endpoint:** `PUT /api/users/:id/status`
 - **Description:** Update a user's account status.
+- **Headers:** `Authorization: Bearer <token>`
 - **Request Body:**
 ```json
 {
@@ -186,6 +189,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 1. Get Records
 - **Endpoint:** `GET /api/records`
 - **Description:** Retrieve a paginated list of financial records.
+- **Headers:** `Authorization: Bearer <token>`
 - **Required Roles:** `ADMIN`, `ANALYST`
 - **Query Parameters (Optional):**
   - `type` (`INCOME` | `EXPENSE`)
@@ -222,6 +226,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 2. Create Record
 - **Endpoint:** `POST /api/records`
 - **Description:** Add a new financial record.
+- **Headers:** `Authorization: Bearer <token>`
 - **Required Role:** `ADMIN`
 - **Request Body:**
 ```json
@@ -238,6 +243,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 3. Update Record
 - **Endpoint:** `PUT /api/records/:id`
 - **Description:** Update an existing financial record.
+- **Headers:** `Authorization: Bearer <token>`
 - **Required Role:** `ADMIN`
 - **Request Body (All fields optional):**
 ```json
@@ -254,6 +260,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 4. Delete Record (Soft Delete)
 - **Endpoint:** `DELETE /api/records/:id`
 - **Description:** Mark a record as deleted.
+- **Headers:** `Authorization: Bearer <token>`
 - **Required Role:** `ADMIN`
 - **Response (200 OK):**
 ```json
@@ -269,6 +276,7 @@ All routes (except `/` and `/api/auth/*`) require a valid JWT token in the `Auth
 #### 1. Get Dashboard Summary
 - **Endpoint:** `GET /api/dashboard/summary`
 - **Description:** Retrieve aggregated data based on undeleted records.
+- **Headers:** `Authorization: Bearer <token>`
 - **Required Roles:** `ADMIN`, `ANALYST`, `VIEWER`
 - **Response (200 OK):**
 ```json
